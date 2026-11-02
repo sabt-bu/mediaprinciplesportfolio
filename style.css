@@ -1,0 +1,216 @@
+/* ---------- 1. YOUR PALETTE AND TYPE: change these first ---------- */
+:root {
+  --ink: #000000;          /* main text */
+  --paper: #ffffff;        /* page background */
+  --placeholder: #d9d9d9;  /* empty image boxes */
+
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --gutter: 10px;          /* space around and between the columns */
+}
+
+/* ---------- 2. BASICS ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul { list-style: none; }
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img, video { max-width: 100%; display: block; }
+
+.placeholder { background: var(--placeholder); }
+
+/* Dotted rules (from the Figma file) */
+.rule {
+  background: url("images/line-long.svg") left top / 100% 1px no-repeat;
+}
+.rule-short {
+  background: url("images/line-short.svg") left top / 100% 1px no-repeat;
+}
+
+/* ---------- 3. THREE-COLUMN LAYOUT ---------- */
+.columns {
+  display: grid;
+  /* three equal columns that stretch with the window */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gutter);
+  height: 100vh;
+  height: 100dvh;
+  padding: 0 var(--gutter);
+}
+
+/* Each column: a fixed title on top, a scrolling area below */
+.column {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.column-title {
+  flex: none;
+  height: 29px;
+  padding-top: 8px;
+  background-position: left bottom;
+}
+
+.column-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  padding-bottom: 40px;
+}
+.column-scroll::-webkit-scrollbar { display: none; }
+.column-scroll:focus-visible { outline: 1px dotted var(--ink); }
+
+/* ---------- 4. COLUMN 1: SELECTED WORKS ---------- */
+.work {
+  display: grid;
+  grid-template-columns: 128px 1fr auto;
+  column-gap: 12px;
+  align-items: start;
+  padding: 7px 0 42px;
+}
+
+.work-thumb {
+  width: 128px;
+  height: auto;   /* keeps each image's own proportions, no cropping */
+}
+
+/* Case study images: fill the column width, height follows each image (no cropping) */
+.case-thumb {
+  width: 100%;
+  height: auto;
+}
+
+.work-desc { margin-top: 12px; }
+
+.see-more { white-space: nowrap; }
+
+/* ---------- 5. COLUMN 2: EXPERIMENTS ---------- */
+.experiment { margin-bottom: 62px; }
+
+.experiment-media {
+  width: 100%;
+  height: auto;   /* height follows each image, no cropping */
+}
+
+.experiment-caption {
+  display: grid;
+  grid-template-columns: 181px 1fr;
+  align-items: baseline;
+  margin-top: 11px;
+}
+
+
+/* ---------- 6. COLUMN 3: ABOUT / CV ---------- */
+.cv-section {
+  display: grid;
+  grid-template-columns: 187px 1fr;
+  padding: 5px 0 32px;
+}
+
+.cv-section h2 { padding-top: 0; }
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 10px;
+  padding: 4px 0 20px;
+}
+.cv-entry:first-child { padding-top: 0; }
+
+.cv-dates { text-align: right; }
+
+.cv-role {
+  grid-column: 1 / -1;
+  padding-left: 18px;
+  max-width: 260px;
+}
+
+.about-image {
+  width: 100%;
+  aspect-ratio: 538 / 301;
+  object-fit: cover;
+  margin-top: 0;
+}
+
+/* ---------- 7. CASE STUDY PAGES ---------- */
+/* Full-width title bar on top, three scrolling columns below */
+.case-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.case-page .columns {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+}
+
+.case-header {
+  flex: none;
+  display: flex;
+  justify-content: space-between;
+  height: 29px;
+  margin: 0 var(--gutter);
+  padding-top: 8px;
+  /* dotted line: 2px dash, 2px gap, across the full width */
+  background: linear-gradient(to right, var(--ink) 50%, transparent 0) left bottom / 4px 1px repeat-x;
+}
+
+.case .column-scroll { padding-top: 5px; }
+
+.case-media {
+  width: 100%;
+  aspect-ratio: 538 / 301;
+  object-fit: cover;
+}
+
+.case-context { margin-top: 11px; }
+.case-desc { margin-top: 19px; }
+
+/* Columns 2 and 3: images and text blocks stacked with a small gap */
+.case-stack > * + * { margin-top: 11px; }
+
+.case-text p { margin-top: 15px; }
+
+/* ---------- 8. SMALLER SCREENS: stack the columns ---------- */
+@media (max-width: 900px) {
+  .columns {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+    gap: 40px;
+  }
+
+  .column-scroll {
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .case-page { height: auto; }
+
+  .work { grid-template-columns: 96px minmax(0, 1fr) auto; }
+  .work-thumb { width: 96px; }
+  .cv-section { grid-template-columns: 110px 1fr; }
+  .experiment-caption { grid-template-columns: 120px 1fr; }
+}

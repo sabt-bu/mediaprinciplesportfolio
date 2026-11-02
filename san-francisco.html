@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>San Francisco | Sabrina Tesalona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;1,400&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CASE STUDY: three columns, each scrolls on its own on wide screens.-->
+  <div class="case-page">
+
+    <header class="case-header">
+      <h1 id="case-title">San Francisco</h1>
+      <a href="index.html">(<em>back</em>)</a>
+    </header>
+
+  <main class="columns case">
+
+    <!-- ========== COLUMN 1: OVERVIEW ========== -->
+    <section class="column" aria-labelledby="case-title">
+
+      <div class="column-scroll" tabindex="0">
+        <img class="case-thumb case-thumb-flex" src="images/jJVg3Wd0ejzHvXQXuS9ztSwfmIo.avif"
+               alt="Describe what this image shows" width="128" height="171">
+        <p class="case-context">2026 - Installation - Receipt Printer, TouchDesigner, Raspberry Pi</p>
+        <p class="case-desc">How does surveillance capitalism affect community?</p>
+      </div>
+    </section>
+
+    <!-- ========== COLUMN 2: PROCESS ========== -->
+    <section class="column" aria-label="Process">
+      <div class="column-scroll case-stack" tabindex="0">
+        <h2>Process</h2>
+         <img class="case-thumb" src="images/Screenshot 2026-11-02 at 10.00.41 AM.png"
+               alt="Describe what this image shows" width="128" height="171">
+        <div class="case-text">
+          <p>The project started with a data export request sent to eleven platforms. The February 24th
+dataset returned 772 data points from a single ordinary day at home. To make the scale of that
+visible, a Python API in Blender was used to generate a 3D sculptural rendering of the dataset,
+and the findings were formatted as a transactional receipt, with platform names as vendor
+names, data events as line items, and payment method reading IDENTITY.</p>
+        </div>
+
+         <img class="case-thumb" src="images/Screenshot 2026-11-02 at 10.00.55 AM.png"
+               alt="Describe what this image shows" width="128" height="171">
+        <img class="case-thumb" src="images/Screenshot 2026-11-02 at 10.01.05 AM.png"
+               alt="Describe what this image shows" width="128" height="171">
+        <div class="case-text">
+          <p>After feedback that the piece needed a more specific, eventful center, the focus shifted to a
+specific milestone: a first solo trip to San Francisco, March 13 through 21, 2026. The
+surveillance data from the trip was exported in the same process as the last iteration and mixed
+with journal entries written during the same week. A TouchDesigner network mapped the
+dataset to visual properties and composited the data visualization over trip footage, with journal
+text generating over the video in real time. A Tone.js file was created from the dataset to act as
+background music for the video.</p>
+
+         <img class="case-thumb" src="images/Screenshot 2026-11-02 at 10.01.20 AM.png"
+               alt="Describe what this image shows" width="128" height="171">
+        <img class="case-thumb" src="images/Screenshot 2026-11-02 at 10.01.28 AM.png"
+               alt="Describe what this image shows" width="128" height="171">
+        <div class="case-text">
+          <p>To make the film feel made rather than generated, the TouchDesigner export was printed frame
+by frame, each frame physically cut by hand and scanned back in to build the stop motion
+animation. The misalignments and paper texture from the process are visible in the final film.</p>
+        </div>
+
+        <img class="case-thumb" src="images/Screenshot 2026-11-02 at 10.01.40 AM.png"
+               alt="Describe what this image shows" width="128" height="171">
+        <div class="case-text">
+          <p>The final iteration introduced a second printer and a second archive into the film to intersect with
+my own archives. Historical displacement events in San Francisco, from the I-Hotel eviction in
+1977 to the Waymo protests in 2024, were formatted in the same receipt structure as the
+personal surveillance data and overlaid with the testimonies of people who lived through them.
+The voices of protest appear in and out alongside the Tone.js audio in the video to further the
+intersection between archives. Two receipts now print simultaneously: one personal, one
+historical. The dialogue between them is the argument.</p>
+        </div>
+
+         <img class="case-thumb" src="images/Screenshot 2026-11-02 at 10.01.48 AM.png"
+               alt="Describe what this image shows" width="128" height="171">
+        <div class="case-text">
+          <p>The installation setup went through its own round of iteration. The original plan was to place the
+two printers on pedestals of different heights, with the historical printer elevated on a taller
+pedestal behind a shorter one, so that the two receipts would descend along the same path and
+accumulate together on the floor. Material constraints changed the final configuration, but the
+intention of the two records converging in the same physical space remained central to the
+design.</p>
+        </div>
+
+        <img class="case-thumb" src="images/Screenshot 2026-11-02 at 10.01.56 AM.png"
+               alt="Describe what this image shows" width="128" height="171">
+        <div class="case-text">
+          <p>To run both printers simultaneously, a Raspberry Pi was introduced to operate the historical
+printer autonomously, since a single laptop could only drive one printer at a time. The Pi runs
+the print script on boot, so the historical receipt starts automatically when the power strip is
+switched on, without any manual input.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COLUMN 3: OUTCOMES ========== -->
+    <section class="column" aria-label="Outcomes">
+      <div class="column-scroll case-stack" tabindex="0">
+        <div class="case-text">
+          <h2>Outcomes</h2>
+          <p>The final spatial decisions came from thinking carefully about how the room itself could
+complete the installation. Cool spotlighting was introduced to draw attention to the receipts on
+the floor and create a sense of focus within the space. White curtains were laid on the floor and
+hung behind the screen to give the installation a defined boundary and make it feel like a
+complete environment rather than a collection of equipment. It also allowed for the hiding of all
+of the wiring needed for the installation. The two printers were placed on opposite sides of the
+space so that their receipts travel toward each other and intersect in the pile on the floor, the
+personal record and the historical record physically converging in the same accumulation.</p>
+        </div>
+
+         <img class="case-thumb" src="images/Screenshot 2026-11-02 at 10.00.14 AM.png"
+               alt="Describe what this image shows" width="128" height="171">
+        <img class="case-thumb" src="images/Screenshot 2026-11-02 at 10.00.01 AM.png"
+               alt="Describe what this image shows" width="128" height="171">
+         <img class="case-thumb" src="images/Screenshot 2026-11-02 at 10.02.05 AM.png"
+               alt="Describe what this image shows" width="128" height="171">
+      </div>
+    </section>
+
+  </main>
+
+  </div>
+
+</body>
+</html>
