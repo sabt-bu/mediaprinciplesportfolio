@@ -274,3 +274,5 @@ img, video { max-width: 100%; display: block; }
 }
 
 .text-link { text-decoration: underline; }
+.ext-arrow { display: inline-block; padding: 0 2px; }
+.ext-arrow:hover { text-decoration: none; transform: translate(1px, -1px); }
