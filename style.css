@@ -250,3 +250,25 @@ img, video { max-width: 100%; display: block; }
   .cv-section { grid-template-columns: 110px 1fr; }
   .experiment-caption { grid-template-columns: 120px 1fr; }
 }
+
+/* ---------- 9. CLICK-TO-ZOOM IMAGES ---------- */
+.zoomable { cursor: zoom-in; }
+
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  cursor: zoom-out;
+}
+.zoom-overlay[hidden] { display: none; }
+
+.zoom-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
