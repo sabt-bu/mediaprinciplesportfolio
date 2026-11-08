@@ -168,10 +168,15 @@ img, video { max-width: 100%; display: block; }
   max-height: calc((100vw - 4 * var(--gutter)) / 3 * 301 / 538);
 }
 
+/* Name on the left, Resume / LinkedIn on the right */
+.about-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .about-links {
   display: flex;
   gap: 24px;
-  padding-top: 12px;
 }
 .about-links a { text-decoration: underline; }
 
@@ -216,6 +221,14 @@ img, video { max-width: 100%; display: block; }
 .case-stack > * + * { margin-top: 11px; }
 
 .case-text p { margin-top: 15px; }
+
+/* "Process" / "Outcomes" stay fixed above their scrolling column */
+.case-col-title {
+  flex: none;
+  padding: 5px 0 11px;
+}
+.case .case-col-title + .column-scroll { padding-top: 0; }
+.case-col-title + .column-scroll > .case-text:first-child > p:first-child { margin-top: 4px; }
 
 /* ---------- 8. SMALLER SCREENS: stack the columns ---------- */
 @media (max-width: 900px) {
