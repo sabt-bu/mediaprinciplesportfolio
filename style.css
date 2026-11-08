@@ -152,6 +152,29 @@ img, video { max-width: 100%; display: block; }
   margin-top: 0;
 }
 
+/* About/CV column never scrolls: the image shrinks (cropping) to fit */
+.about-fixed {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: var(--gutter);
+}
+.about-fixed > * { flex: none; }
+.about-fixed .about-image {
+  flex: 1 1 0;
+  min-height: 0;
+  aspect-ratio: auto;
+  /* never taller than its normal 538:301 size (column width × 301/538) */
+  max-height: calc((100vw - 4 * var(--gutter)) / 3 * 301 / 538);
+}
+
+.about-links {
+  display: flex;
+  gap: 24px;
+  padding-top: 12px;
+}
+.about-links a { text-decoration: underline; }
+
 /* ---------- 7. CASE STUDY PAGES ---------- */
 /* Full-width title bar on top, three scrolling columns below */
 .case-page {
