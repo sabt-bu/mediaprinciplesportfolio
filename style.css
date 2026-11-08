@@ -272,3 +272,5 @@ img, video { max-width: 100%; display: block; }
   max-height: 100%;
   object-fit: contain;
 }
+
+.text-link { text-decoration: underline; }
